@@ -15,10 +15,10 @@ export function getEntries(grid: Grid): Entry[] {
   for (let row = 0; row < grid.length; row++) {
     for (let col = 0; col < grid[row].length; col++) {
       const cell = grid[row][col];
+      if (cell.block) continue;
       const startsAcross = (col === 0 || grid[row][col - 1].block) && col + 1 < grid[row].length && !grid[row][col + 1].block;
       const startsDown = (row === 0 || grid[row - 1][col].block) && row + 1 < grid.length && !grid[row + 1][col].block;
       if (!startsAcross && !startsDown) continue;   
-      if (cell.block) continue;
       if (startsAcross) {
         // Start of an across entry
         const cells: Pos[] = [];
@@ -43,14 +43,10 @@ export function getEntries(grid: Grid): Entry[] {
           down.push({ num: number, dir: "down", cells });
         }
       }
-      if (startsAcross || startsDown) {
-        // This square starts an entry, so increment the number
-        number++;
-      }
+      number++;
+      
     }
   }
-  const entries = [...across, ...down];
-        
   
-  return entries;
+  return [...across, ...down];
 }
