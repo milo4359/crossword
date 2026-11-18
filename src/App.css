@@ -22,6 +22,7 @@
 .cell.block { background: #000; }
 .cell.in-entry { background: #cfe8ff; }
 .cell.selected { background: #ffd84d; }
+.cell.block.selected { background: #666; }
 .num {
   position: absolute;
   top: 1px;
@@ -29,3 +30,12 @@
   font-size: 0.6rem;
   font-weight: 400;
 }
+.app { display: flex; gap: 2rem; align-items: flex-start; }
+.matches { width: 16rem; }
+.matches h2 { margin: 0 0 0.25rem; font-size: 1.1rem; }
+.pattern { font-family: monospace; font-size: 1.3rem; letter-spacing: 0.15em; }
+.count { color: #666; margin: 0.5rem 0; }
+.matches ol { list-style: none; padding: 0; margin: 0; max-height: 32rem; overflow-y: auto; font-family: monospace; }
+.matches li { display: flex; justify-content: space-between; padding: 0.1rem 0.25rem; }
+.matches li:nth-child(odd) { background: #f4f4f4; }
+.score { color: #888; }

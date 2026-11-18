@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+scripts/scored.txt
+scripts/missing.txt
+scripts/score-state.json*
+scripts/sample.txt
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
